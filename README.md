@@ -8,6 +8,7 @@
 - jwt
 
 #### endpoints 
+
 POST /api/users - Cadastra novo usuário (Não requer authenticação)
 request json body
 ```
@@ -19,28 +20,63 @@ request json body
 ```
 response json body
 ```
-{
-  "id": 1,
+ {
+  "user": {
+  "id": 6,
   "username": "Zé Ramalho",
-  "email": "deviseteste@gmail.com",
-  "password_digest": "$2a$12$gQEI8pNn2psFpR1n9piK4eBoEwo7H878j1M.lyVNJu5geM9iq7lAK"
-}
+  "password_digest": "$2a$12$QZCnDSvDSt4XPM7/ORs89OMAiYz3T7Px27udvpxB.mhfiVUUkyJJ.",
+  "created_at": "2023-07-03T11:26:32.797Z",
+  "updated_at": "2023-07-03T11:26:32.797Z",
+  "email": "deviseteste@gmail.com"
+ },
+  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2fQ.uVo7u877IT2GEMpB_gxVtxhMAYAJD8W_XiUoNvR7_iM"
+ }
 ```
 
 GET /api/users - retorna todos usuários cadsastrados (Não requer autenticação)
+request json body
+```
+{}
+```
+
+response json body
 ```
 [
-	{
-		"id": 1,
-		"username": "Zé Ramalho",
-		"email": "deviseteste@gmail.com",
-		"password_digest": "$2a$12$gQEI8pNn2psFpR1n9piK4eBoEwo7H878j1M.lyVNJu5geM9iq7lAK"
-	},
-	{
-		"id": 2,
-		"username": "Zé Ramalho",
-		"email": "deviseteste@gmail.com",
-		"password_digest": "$2a$12$ftmwYk7j2Qq/wdF8VXZbneXli6ZcXia.02xW5khY2VjWF4Vh0ZSuC"
-	}
+ {
+  "id": 4,
+  "username": "Zé Ramalho",
+  "email": "deviseteste@gmail.com"
+ },
+ {
+  "id": 5,
+  "username": "Zé Ramalho",
+  "email": "deviseteste@gmail.com"
+ }
 ]
 ```
+
+GET /api/musics - retorna todas as músicas criadas (requer autenticação)
+request json body
+```
+ { }
+```
+
+responses json body
+Caso usuário esteja sem autenticação:
+ {
+  "message": "Você precisa estar logado"
+ }
+
+Caso usuário esteja autenticado:
+```
+[
+{
+  "id": 1,
+  "name": "Ragatanga",
+  "user_id": 1,
+ }
+]
+```
+
+
+
