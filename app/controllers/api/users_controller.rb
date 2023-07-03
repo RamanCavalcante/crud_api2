@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
       render json: {error: 'Usuário ou senha inválidos'},
       status: :unprocessable_entity
     end
-  end
+  end   
   
   private
     def user_params

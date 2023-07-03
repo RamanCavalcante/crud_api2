@@ -1,7 +1,8 @@
-class MusicsController < ApplicationController
+class Api::MusicsController < ApplicationController
+  before_action :authorize
   before_action :set_music, only: [:show, :update, :destroy]
 
-  # GET /musics
+  # GET api/musics
   def index
     @musics = Music.all
 
@@ -15,7 +16,7 @@ class MusicsController < ApplicationController
 
   # POST /musics
   def create
-    @music = Music.new(music_params)
+    @music = Music.new(music_params.merge(user: @user))
 
     if @music.save
       render json: @music, status: :created, location: @music
@@ -46,6 +47,6 @@ class MusicsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def music_params
-      params.require(:music).permit(:name, :user_id)
+      params.require(:music).permit(:name)
     end
 end
