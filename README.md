@@ -64,7 +64,7 @@
   "message": "Você precisa estar logado"
  }
 ```
-<P>Caso usuário esteja autenticado</P>
+<p>Caso usuário esteja autenticado</p>
 ```
 [
  {
