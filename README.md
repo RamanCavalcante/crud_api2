@@ -37,7 +37,7 @@
 {}
 ```
 
-<p>response json body<p>
+<p>response json body</p>
 ```
 [
  {
