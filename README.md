@@ -8,9 +8,8 @@
 - jwt
 
 #### endpoints 
-
-POST /api/users - Cadastra novo usuário (Não requer authenticação)
-request json body
+<p>POST /api/users - Cadastra novo usuário (Não requer authenticação)</p>
+<p>request json body</p>
 ```
 {
   "username": "Zé Ramalho",
@@ -18,7 +17,7 @@ request json body
   "password": "1234567"
 }
 ```
-response json body
+<p>response json body</p>
 ```
  {
   "user": {
@@ -32,14 +31,13 @@ response json body
   "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2fQ.uVo7u877IT2GEMpB_gxVtxhMAYAJD8W_XiUoNvR7_iM"
  }
 ```
-
-GET /api/users - retorna todos usuários cadsastrados (Não requer autenticação)
-request json body
+<p>GET /api/users - retorna todos usuários cadsastrados (Não requer autenticação)</p>
+<p>request json body</p>
 ```
 {}
 ```
 
-response json body
+<p>response json body<p>
 ```
 [
  {
@@ -54,23 +52,22 @@ response json body
  }
 ]
 ```
-
-GET /api/musics - retorna todas as músicas criadas (requer autenticação)
-request json body
+<p>GET /api/musics - retorna todas as músicas criadas (requer autenticação)</p>
+<p>request json body</p>
 ```
  { }
 ```
-
-responses json body
-Caso usuário esteja sem autenticação:
+<p>responses json body</p>
+<p>Caso usuário esteja sem autenticação</p>
+```
  {
   "message": "Você precisa estar logado"
  }
-
-Caso usuário esteja autenticado:
+```
+<P>Caso usuário esteja autenticado</P>
 ```
 [
-{
+ {
   "id": 1,
   "name": "Ragatanga",
   "user_id": 1,
